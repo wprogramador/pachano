@@ -66,12 +66,16 @@ body {
 .nav-logo-img {
   height: 50px;
   width: auto;
-  filter: brightness(0) invert(1);
   transition: var(--transition);
+  border-radius: 50%;
+  background: var(--white);
+  padding: 4px;
+  object-fit: contain;
 }
 
 .navbar.scrolled .nav-logo-img {
   height: 42px;
+  padding: 3px;
 }
 
 .nav-menu {
@@ -820,7 +824,10 @@ body {
   height: 60px;
   width: auto;
   margin-bottom: 10px;
-  filter: brightness(0) invert(1);
+  border-radius: 50%;
+  background: var(--white);
+  padding: 5px;
+  object-fit: contain;
 }
 
 .footer-brand p {
@@ -886,6 +893,7 @@ body {
 
   .nav-logo-img {
     height: 40px;
+    padding: 3px;
   }
 
   .nav-menu {
