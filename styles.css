@@ -364,13 +364,24 @@ body {
 
 .about-image {
   position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image picture,
+.about-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .about-image img {
   width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-lg);
+  height: auto;
+  aspect-ratio: 3/4;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
@@ -1139,6 +1150,11 @@ body {
   .featured-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .about-image img {
+    aspect-ratio: 4/3;
+    object-position: center;
   }
 
   .featured-list {
