@@ -321,6 +321,14 @@ body {
   margin-bottom: 10px;
 }
 
+.section-tag.highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
 /* ABOUT */
 .about {
   padding: 100px 20px;
@@ -402,6 +410,88 @@ body {
   font-weight: 600;
 }
 
+/* FEATURED SERVICE - CIRUGÍA DE LA MANO */
+.featured-service {
+  background: linear-gradient(135deg, #e8f8f5 0%, #f0fdfa 100%);
+  padding: 100px 20px;
+}
+
+.featured-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.featured-content h2 {
+  font-size: clamp(28px, 4vw, 38px);
+  color: var(--primary);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.featured-lead {
+  font-size: 18px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.featured-content p {
+  color: var(--text-light);
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.featured-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.featured-list li {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+.featured-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.featured-icon {
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+
+.featured-card h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.featured-card p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 /* SERVICES */
 .services {
   background: var(--bg);
@@ -429,7 +519,7 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
@@ -440,11 +530,36 @@ body {
   box-shadow: var(--shadow);
   transition: var(--transition);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.service-card.featured {
+  border: 2px solid var(--accent);
+  transform: scale(1.02);
+}
+
+.service-card.featured:hover {
+  transform: scale(1.02) translateY(-8px);
+}
+
+.service-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .service-icon {
@@ -462,6 +577,19 @@ body {
   color: var(--text-light);
   font-size: 14px;
   line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.service-link {
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.service-link:hover {
+  color: var(--primary);
 }
 
 /* PILLARS */
@@ -564,13 +692,19 @@ body {
 .contact-info h2 {
   font-size: clamp(28px, 4vw, 36px);
   color: var(--primary);
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+}
+
+.contact-intro {
+  color: var(--text-light);
+  margin-bottom: 30px;
+  font-size: 16px;
 }
 
 .contact-item {
   display: flex;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .contact-icon {
@@ -601,6 +735,10 @@ body {
   color: var(--accent-dark);
   text-decoration: none;
   font-weight: 600;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
 }
 
 .contact-services {
@@ -785,9 +923,14 @@ body {
   }
 
   .about-container,
-  .contact-container {
+  .contact-container,
+  .featured-container {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .featured-list {
+    grid-template-columns: 1fr;
   }
 
   .experience-badge {
@@ -819,6 +962,14 @@ body {
     width: 26px;
     height: 26px;
   }
+
+  .service-card.featured {
+    transform: scale(1);
+  }
+
+  .service-card.featured:hover {
+    transform: scale(1) translateY(-8px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -835,7 +986,7 @@ body {
     font-size: 14px;
   }
 
-  .service-card, .pillar-card {
+  .service-card, .pillar-card, .featured-card {
     padding: 25px 20px;
   }
 
@@ -845,5 +996,9 @@ body {
 
   .footer-logo-img {
     height: 45px;
+  }
+
+  .featured-content h2 {
+    font-size: 26px;
   }
 }
