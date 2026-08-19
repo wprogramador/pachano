@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+Crawl-delay: 1
+
 Sitemap: https://drapachano.bio.co.ve/sitemap.xml
